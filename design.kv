@@ -1,0 +1,23 @@
+<MainPage>:
+    GridLayout:
+        cols:1
+        id: main_layout
+        RelativeLayout:
+            size_hint:0.3,0.3            
+            Button:
+                text: "Get games now!"
+                on_release: root.refresh()
+                size_hint: None,None
+                pos_hint: {'center_x':0.5, 'center_y': 0.9}
+                size: 250, 64
+                background_color: (0,0,1,0.8)
+        ScrollView:
+            GridLayout:
+                id:games
+                text_size:self.width, None
+                size_hint_y:None
+                cols:1
+                spacing:20,20
+# <RootWidget>:
+#     MainPage:
+#         name: "main_page"
