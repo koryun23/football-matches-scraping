@@ -19,6 +19,10 @@ class P(Screen):
 
 
 class MainPage(Screen):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+        self.refresh()
+
     def refresh(self):
         global matches
         matches = scraper.get_games()
@@ -123,7 +127,6 @@ class MainPage(Screen):
 #     pass
 class MainApp(App):
     def build(self):
-        MainPage().refresh()
         return MainPage()
 
 if __name__ == "__main__":
